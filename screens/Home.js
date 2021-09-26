@@ -88,7 +88,7 @@ export default function Home(props) {
 
       return (
 
-        <Marker coordinate={{ latitude: lat, longitude: lon }}
+        <Marker coordinate={{ latitude: lat-0.002, longitude: lon+0.004}}
           title="Bus Location" onPress={() => console.log("marker_BUS")}
           description={"2 .This is a marker in React Natve"}
           icon={require('../assets/Bus.png')}
