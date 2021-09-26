@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "266500472183",
+    "firebase_url": "https://bus-tracking-da032-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bus-tracking-da032",
+    "storage_bucket": "bus-tracking-da032.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266500472183:android:a10dc92afb79c85bbb3572",
+        "android_client_info": {
+          "package_name": "com.rnsit.bustracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266500472183-6mje18fsp1pa5auhrrsvqlu5o6v788g7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3i7K-URAqPaoZlxC-Bg-SJb3oUFdaxtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266500472183-6mje18fsp1pa5auhrrsvqlu5o6v788g7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

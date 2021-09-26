@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "MainApp",
+    "slug": "snack-280a1dc7-8973-4f91-a171-ec6001735412",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./asset/bustracking.png",
+    "splash": {
+      "image": "./asset/bustracking.png",
+      "resizeMode": "300*300",
+      "backgroundColor": "#ffffff"
+    }
+  },
+  "android": {
+    "permissions": ["ACCESS_BACKGROUND_LOCATION"]
+  }
+  
+  
+}
