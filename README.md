@@ -20,6 +20,7 @@ and providing smooth transportation facilities.
 * Optimal user Guidance (google meh jo distance aa jata hai);
 * Share option google 
 * **Login/ Signup** for user
+* Google FIREBASE used as realtime database.
 
 ## ADDITIONALS FEATURES FOR FUTURE 
 * Profile page for each user.
@@ -27,7 +28,7 @@ and providing smooth transportation facilities.
 * Provide APIs for platform integrations.
 * Emergency type ka koi dusra bus pick kar lega , location history for attendance
 
-## _ABOUT V-Detect_
+## _ABOUT 
 
 
 
@@ -39,13 +40,26 @@ and providing smooth transportation facilities.
 
 ## HOMEPAGE
 
+![alt text](https://github.com/Satyam7Jha/Bus-Tracking./blob/master/SreenShorts/Screenshot_2021-09-26-11-34-36-16.jpg "Homepage image 1") 
+![alt text](https://github.com/Satyam7Jha/Bus-Tracking./blob/master/SreenShorts/Screenshot_2021-09-26-11-34-51-95.jpg "Homepage image 2")
 
-## LOGIN PAGE
+## SIDE NAVIGATION
+![alt text](https://github.com/Satyam7Jha/Bus-Tracking./blob/master/SreenShorts/Screenshot_2021-09-26-11-34-59-52.jpg "Side Nav 1")
+
+## GOOGLE API TO CALCULATE DISTANCE 
+![alt text](https://github.com/Satyam7Jha/Bus-Tracking./blob/master/SreenShorts/Screenshot_2021-09-26-11-36-28-21.jpg "distance 1")
+
+## GOOGLE  FIREBASE 
+![alt text](https://github.com/Satyam7Jha/Bus-Tracking./blob/master/SreenShorts/Screenshot%20from%202021-09-26%2011-37-15.png "Server 1")
+
+## WELCOME PAGE
+![alt text](https://github.com/Satyam7Jha/Bus-Tracking./blob/master/SreenShorts/Screenshot_2021-09-26-11-31-47-55.jpg "Welcome Page 1")
 
 ## REGISTRATION PAGE
+![alt text](https://github.com/Satyam7Jha/Bus-Tracking./blob/master/SreenShorts/Screenshot_2021-09-26-11-32-16-64.jpg "Registration Page")
 
-
-## RESULT PAGE
+## LOGIN PAGE
+![alt text](https://github.com/Satyam7Jha/Bus-Tracking./blob/master/SreenShorts/Screenshot_2021-09-26-11-31-55-94.jpg "Login Page")
 
 
 
