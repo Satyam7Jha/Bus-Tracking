@@ -1,6 +1,7 @@
 import React from "react";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { Button } from 'react-native-paper';
+import { Ionicons, FontAwesome5, SimpleLineIcons, AntDesign } from '@expo/vector-icons';
 
 
 export default function Welcome({ navigation }) {

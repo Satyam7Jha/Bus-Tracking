@@ -6,9 +6,9 @@ import {
   Image,
   Platform,
   StyleSheet,
-  ScrollView
+  ScrollView,
 } from 'react-native';
-
+import { Ionicons, FontAwesome5, SimpleLineIcons, AntDesign } from '@expo/vector-icons';
   
 import FormInput from '../components/FormInput';
 import FormButton from '../components/Formbutton';
@@ -21,6 +21,7 @@ const SignupScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [busRoute, setbusRoute] = useState();
+
 
   const [confirmPassword, setConfirmPassword] = useState();
 
@@ -59,7 +60,7 @@ const SignupScreen = ({navigation}) => {
       />
 
       <FormInput
-        labelValue={Number}
+        labelValue={phone}
         onChangeText={(phone) => setphone(phone)}
         placeholderText="Phone no"
         iconType="phone"

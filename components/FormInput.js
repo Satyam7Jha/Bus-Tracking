@@ -3,7 +3,8 @@ import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
 import {windowHeight, windowWidth} from '../components/Dimensions';
 
-import AntDesign from 'react-native-vector-icons/AntDesign';
+// import AntDesign from 'react-native-vector-icons/AntDesign';
+import { Icons, AntDesign } from '@expo/vector-icons';
 
 const FormInput = ({labelValue, placeholderText, iconType, ...rest}) => {
   return (
@@ -23,7 +24,7 @@ const FormInput = ({labelValue, placeholderText, iconType, ...rest}) => {
   );
 };
 
-export default FormInput;
+export default FormInput; 
 
 const styles = StyleSheet.create({
   inputContainer: {

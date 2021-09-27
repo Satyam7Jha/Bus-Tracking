@@ -1,4 +1,5 @@
 import React, {useContext, useState} from 'react';
+import { Ionicons, FontAwesome5, SimpleLineIcons, AntDesign } from '@expo/vector-icons';
 import {
   View,
   Text,
@@ -51,7 +52,7 @@ const SignupScreen = ({navigation}) => {
 
       
       <FormInput
-        labelValue={Number}
+        labelValue={phone}
         onChangeText={(phone) => setphone(phone)}
         placeholderText="Phone no"
         iconType="phone"

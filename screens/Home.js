@@ -35,9 +35,7 @@ export default function Home(props) {
         return;
       }
 
-      let location = await Location.getLastKnownPositionAsync({
-        accuracy: 6,
-      });
+      let location = await Location.getLastKnownPositionAsync();
       setLocation(location.coords);
       setRegion({
         latitude: location.coords.latitude,
@@ -88,9 +86,9 @@ export default function Home(props) {
 
       return (
 
-        <Marker coordinate={{ latitude: lat-0.002, longitude: lon+0.004}}
+        <Marker coordinate={{ latitude: lat, longitude: lon}}
           title="Bus Location" onPress={() => console.log("marker_BUS")}
-          description={"2 .This is a marker in React Natve"}
+          description={"This is the current Bus Location"}
           icon={require('../assets/Bus.png')}
         />
       )
@@ -117,10 +115,20 @@ export default function Home(props) {
 
         <Marker coordinate={{ latitude: region.latitude, longitude: region.longitude }}
           title="My current location" onPress={() => console.log("marker_curr")}
-          description={"1 . This is a marker in React Natve"}
+          description={"This is Your Current Location"}
           icon={require('../assets/boy.png')}
         />
         {markerr(isLoading)}
+        <Marker
+          coordinate={{
+            latitude: 12.9016027278,
+            longitude: 77.518522625,
+          }}
+          title="RNSIT"
+          description={"college campus "}
+          icon={require("../assets/college.png")}
+          
+        />
 
         {/* <Marker coordinate={{ latitude: lat, longitude: lon }}
           title="Bus Location" onPress={() => console.log("marker_BUS")}
@@ -128,9 +136,9 @@ export default function Home(props) {
           icon={require('../assets/Bus.png')}
         /> */}
       </MapView>
-      <SendLoc userLoc={region} />
+      {/* <SendLoc userLoc={region} /> */}
       <View style={{ marginVertical: 10, marginLeft: 315 }}>
-        <MaterialIcons name="gps-fixed" size={34} color="black" onPress={() => alert("GPS Under Construction !!")} />
+        <MaterialIcons name="gps-fixed" size={40} color="black" onPress={() => alert("GPS Under Construction !!")} />
 
 
       </View>
