@@ -1,7 +1,7 @@
 #  _Bus Tracking_
 ### Contributors : 
 * **Satyam Kumar Jha**
-* **Padma Chandana**
+* **Padmachandana N**
 * **Saumya Shukla**
 * **Yash Anand**
 
