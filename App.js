@@ -1,70 +1,37 @@
 // import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View, Button, Image } from "react-native";
-import Home from "./screens/Home";
-import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createStackNavigator } from '@react-navigation/stack';
-import Sidebar from "./screens/Sidebar";
-import { Ionicons, FontAwesome5, SimpleLineIcons, AntDesign } from '@expo/vector-icons';
-import LoginScreen from './screens/LoginScreen';
-import SignupScreen from './screens/SignupScreen';
-import SignupStudent from './screens/SignupStudent';
-import Welcome from './screens/Welcome';
+import React ,{useState,useEffect} from "react";
 
+import { Navigation } from "./navigation/index";
+import { AuthenticationContextProvider } from "./authentication/authentication.context";
 
-const Stack = createStackNavigator();
+import * as firebase from "firebase";
+//const Stack = createStackNavigator();
 
-function HomeScreen() {
-  return (
-    // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    //   <Home />
-    // </View>
-    <Drawer.Navigator drawerContent={props => <Sidebar {...props} />} >
-      <Drawer.Screen name="Home" component={Home} options={{ drawerIcon: config => <AntDesign name="home" size={20} color="black" onPress={() => alert("Home Under Construction !!")} /> }} />
-      <Drawer.Screen name="Profile" component={Home} options={{ drawerIcon: config => <SimpleLineIcons name="people" size={20} color="black" onPress={() => alert("Profile Under Construction !!")} /> }} />
-      <Drawer.Screen name="Add Bus" component={Home} options={{ drawerIcon: config => <Ionicons name="md-bus-outline" size={20} color="black" onPress={() => alert("AddBus Under Construction !!")} /> }} />
-      <Drawer.Screen name="Settings" component={Home} options={{ drawerIcon: config => <Ionicons name="md-settings-outline" size={20} color="black" onPress={() => alert("Setting Under Construction !!")} /> }} />
-      <Drawer.Screen name="Support" component={Home} options={{ drawerIcon: config => <AntDesign name="customerservice" size={20} color="black" onPress={() => alert("Support Under Construction !!")} /> }} />
-      <Drawer.Screen name="Donate" component={Home} options={{ drawerIcon: config => <FontAwesome5 name="donate" size={20} color="black" onPress={() => alert("Donate Under Construction !!")} /> }} />
-    </Drawer.Navigator>
-  );
+const firebaseConfig = {
+  apiKey: "AIzaSyArWoXy-2p-eFY4x2K5pBafjJTVDDRQPhI",
+  authDomain: "bustrack-27015.firebaseapp.com",
+  databaseURL: "https://bustrack-27015-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "bustrack-27015",
+  storageBucket: "bustrack-27015.appspot.com",
+  messagingSenderId: "394942805670",
+  appId: "1:394942805670:web:4ee531e6ffd7506bafa667"
+};
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
 }
 
 
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Welcome" component={Welcome} />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen name="SignupScreen" component={SignupScreen} />
-      <Stack.Screen name="SignupStudent" component={SignupStudent} />
-      <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
-
-    </Stack.Navigator>
-  );
-}
-
-const Drawer = createDrawerNavigator();
 
 export default function App() {
   console.log("App executed");
+ 
+  //if (!isAuthenticated) return null;
 
-  return (
+  return (  
 
-    <NavigationContainer>
-
-      {/* <Drawer.Navigator drawercontent={props => <Drawerr {...props} />} >
-        <Drawer.Screen name="Home" component={HomeScreen} options={{ drawerIcon: config => <AntDesign name="home" size={20} color="black" onPress={() => alert("Home Under Construction !!")} /> }} />
-        <Drawer.Screen name="Profile" component={HomeScreen} options={{ drawerIcon: config => <SimpleLineIcons name="people" size={20} color="black" onPress={() => alert("Profile Under Construction !!")} /> }} />
-        <Drawer.Screen name="Add Bus" component={HomeScreen} options={{ drawerIcon: config => <Ionicons name="md-bus-outline" size={20} color="black" onPress={() => alert("AddBus Under Construction !!")} /> }} />
-        <Drawer.Screen name="Settings" component={HomeScreen} options={{ drawerIcon: config => <Ionicons name="md-settings-outline" size={20} color="black" onPress={() => alert("Setting Under Construction !!")} /> }} />
-        <Drawer.Screen name="Support" component={HomeScreen} options={{ drawerIcon: config => <AntDesign name="customerservice" size={20} color="black" onPress={() => alert("Support Under Construction !!")} /> }} />
-        <Drawer.Screen name="Donate" component={HomeScreen} options={{ drawerIcon: config => <FontAwesome5 name="donate" size={20} color="black" onPress={() => alert("Donate Under Construction !!")} /> }} />
-      </Drawer.Navigator> */}
-
-      <MyStack />
-    </NavigationContainer>
+    <AuthenticationContextProvider>
+       <Navigation />
+    </AuthenticationContextProvider>
 
 
 

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState,useEffect} from 'react';
 import { Ionicons, FontAwesome5, SimpleLineIcons, AntDesign } from '@expo/vector-icons';
 import {
   View,
@@ -11,19 +11,17 @@ import {
 } from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/Formbutton';
-
-// import {AuthContext} from '../navigation/AuthProvider';
+import { AuthenticationContext } from "../authentication/authentication.context";
 
 const SignupScreen = ({navigation}) => {
-  const [name, setname] = useState();
-  
+  const [name, setname] = useState(); 
   const [phone, setphone] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [busRoute, setbusRoute] = useState();
-
   const [confirmPassword, setConfirmPassword] = useState();
-
+  const { onRegister, error } = useContext(AuthenticationContext);
+  
   return (
     <ScrollView>
     <View style={styles.container}>
@@ -85,10 +83,15 @@ const SignupScreen = ({navigation}) => {
         iconType="lock"
         secureTextEntry={true}
       />
-
+          {error && (
+          <View >
+          <Text style={styles.errorContainer}>{error}</Text>
+        </View>
+       
+        )}
         <FormButton
         buttonTitle="Sign Up"
-        onPress={() => navigation.navigate('HomeScreen')}
+        onPress={() => onRegister(email, password, confirmPassword)}
       />
 
       <View style={styles.textPrivate}>
@@ -144,16 +147,13 @@ const styles = StyleSheet.create({
     color: '#2e64e5',
     //fontFamily: 'Lato-Regular',
   },
-  textPrivate: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginVertical: 35,
-    justifyContent: 'center',
-  },
-  color_textPrivate: {
-    fontSize: 13,
-    fontWeight: '400',
-    //fontFamily: 'Lato-Regular',
-    color: 'grey',
-  },
+  errorContainer:{
+    width:300,
+    fontSize:18,
+    color:"red",
+    marginTop:16,
+    marginBottom:16,
+    marginLeft:14,
+    },
+  
 });

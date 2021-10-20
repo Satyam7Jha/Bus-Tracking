@@ -12,6 +12,7 @@ import { Ionicons, FontAwesome5, SimpleLineIcons, AntDesign } from '@expo/vector
   
 import FormInput from '../components/FormInput';
 import FormButton from '../components/Formbutton';
+import { AuthenticationContext } from "../authentication/authentication.context";
 
 const SignupScreen = ({navigation}) => {
   const [name, setname] = useState();
@@ -21,6 +22,7 @@ const SignupScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [busRoute, setbusRoute] = useState();
+  const { onRegister, error } = useContext(AuthenticationContext);
 
 
   const [confirmPassword, setConfirmPassword] = useState();
@@ -93,10 +95,14 @@ const SignupScreen = ({navigation}) => {
         iconType="lock"
         secureTextEntry={true}
       />
-
+       {error && (
+          <View >
+          <Text style={styles.errorContainer}>{error}</Text>
+        </View>
+       )}
       <FormButton
         buttonTitle="Sign Up"
-        onPress={() => navigation.navigate('HomeScreen')}
+        onPress={() => onRegister(email, password, confirmPassword)}
       />
 
       <View style={styles.textPrivate}>
@@ -154,6 +160,13 @@ const styles = StyleSheet.create({
     color: '#2e64e5',
     //fontFamily: 'Lato-Regular',
   },
-  
+  errorContainer:{
+    width:300,
+    fontSize:18,
+    color:"red",
+    marginTop:16,
+    marginBottom:16,
+    marginLeft:14,
+    },
   
 });
