@@ -11,7 +11,7 @@ export default GetData = () => {
   console.log("Get",busLoc);
 
   useEffect(() => {
-    fetch('https://bustrack-27015-default-rtdb.asia-southeast1.firebasedatabase.app/BusLoc/-Mk8U-AlhM8VHxUmOGXb/userLoc.json')
+    fetch('https://bustrack-27015-default-rtdb.asia-southeast1.firebasedatabase.app/BusLocation/userLoc.json')
       .then((response) => response.json())
       .then((json) => setBusLoc(json))
       .catch((error) => console.error(error))

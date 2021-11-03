@@ -9,6 +9,8 @@ export const AuthenticationContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+  console.log(user,"login");
+  // console.log(user["user"]["email"])
 
   const onLogin = (email, password) => {
     setIsLoading(true);
@@ -32,6 +34,7 @@ export const AuthenticationContextProvider = ({ children }) => {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((u) => {
+        
         setUser(u);
         console.log(u)
         setIsLoading(false);

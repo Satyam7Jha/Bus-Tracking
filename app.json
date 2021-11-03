@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/s.png",
     "splash": {
-      "image": "./assets/rnsit.jpg",
+      "image": "./assets/rnsit.png",
       
       "backgroundColor": "#ffffff"
     }

@@ -23,12 +23,7 @@ export default function Home(props) {
 
   useEffect(() => {
     (async () => {
-      if (Platform.OS === 'android' && !Constants.isDevice) {
-        setErrorMsg(
-          'Oops, this will not work on Snack in an Android emulator. Try it on your device!'
-        );
-        return;
-      }
+     
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
         setErrorMsg('Permission to access location was denied');
@@ -68,6 +63,8 @@ export default function Home(props) {
       .finally(() => setLoading(true));
   }, []);
 
+  console.log(busLoc);
+
 
 
 
@@ -80,17 +77,18 @@ export default function Home(props) {
   function markerr(isLoding) {
 
     if (isLoading) {
-      let lat = busLoc.userLoc.latitude;
-      let lon = busLoc.userLoc.longitude;
+      // let lat = busLoc.userLoc.latitude;
+      // let lon = busLoc.userLoc.longitude;
       console.log(lat, "my variable", lon)
 
       return (
+        <View></View>
 
-        <Marker coordinate={{ latitude: lat, longitude: lon}}
-          title="Bus Location" onPress={() => console.log("marker_BUS")}
-          description={"This is the current Bus Location"}
-          icon={require('../assets/Bus.png')}
-        />
+        // <Marker coordinate={{ latitude: lat+0.0444, longitude: lon}}
+        //   title="Bus Location" onPress={() => console.log("marker_BUS")}
+        //   description={"This is the current Bus Location"}
+        //   icon={require('../assets/Bus.png')}
+        // />
       )
     }
     else {
@@ -112,13 +110,13 @@ export default function Home(props) {
           longitudeDelta: 0.0421,
         }}>
 
-
+{/* 
         <Marker coordinate={{ latitude: region.latitude, longitude: region.longitude }}
           title="My current location" onPress={() => console.log("marker_curr")}
           description={"This is Your Current Location"}
           icon={require('../assets/boy.png')}
-        />
-        {markerr(isLoading)}
+        /> */}
+        {/* {markerr(isLoading)} */}
         <Marker
           coordinate={{
             latitude: 12.9016027278,
@@ -136,7 +134,7 @@ export default function Home(props) {
           icon={require('../assets/Bus.png')}
         /> */}
       </MapView>
-      {/* <SendLoc userLoc={region} /> */}
+      <SendLoc userLoc={region} />
       <View style={{ marginVertical: 10, marginLeft: 315 }}>
         <MaterialIcons name="gps-fixed" size={40} color="black" onPress={() => alert("GPS Under Construction !!")} />
 
